@@ -1,7 +1,7 @@
 node('master') {
   
    stage 'Git Checkout'
-     git 'https://github.com/nad/spring-petclinic.git'
+     git 'https://github.com/nadnoops/spring-petclinic.git'
          echo 'checkout done'
 
    stage('Maven Build'){
