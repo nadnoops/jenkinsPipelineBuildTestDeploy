@@ -6,29 +6,6 @@ node('master') {
 
    stage('Maven Build'){
       echo 'Maven Project Compile'
-      steps {
-                sh '''
-                    echo "PATH = ${PATH}"
-                    echo "M2_HOME = ${M2_HOME}"
-                '''
-            }
-      steps{
-        sh 'mvn install' 
-      } 
-      post {
-          success {
-              junit 'target/surefire-reports/**/*.xml' 
-          }
-      }
+     maven 'clean install'
    }
-
-
-   stage 'Test Case'
-        echo 'Test Case will running'
-
-   stage 'Reporting'
-        echo 'Reporting Getting Creating'
-
-   stage 'Job Status Status'
-        echo 'Notification Sending'
 }
